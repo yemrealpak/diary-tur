@@ -8,7 +8,7 @@ app = Flask(__name__)
 # Connecting SQLite
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///diary.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-# Creating a DN
+# Creating a DB
 db = SQLAlchemy(app)
 # Creating a table
 

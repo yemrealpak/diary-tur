@@ -1,6 +1,6 @@
 # İçeri Aktarma
 from flask import Flask, render_template,request, redirect
-# Importing the database library
+# Veritabanı kütüphanesini içe aktarma
 from flask_sqlalchemy import SQLAlchemy
 
 

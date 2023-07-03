@@ -1,4 +1,4 @@
-# Import
+# İçeri Aktarma
 from flask import Flask, render_template,request, redirect
 # Importing the database library
 from flask_sqlalchemy import SQLAlchemy

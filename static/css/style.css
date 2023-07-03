@@ -4,7 +4,7 @@ body::-webkit-scrollbar {
   }
   
   body::-webkit-scrollbar-track {
-    background: #0F172A;        /* the colour of the track zone */
+    background: #0F172A;        /* izleme bölgesinin rengi */
   }
   
   body::-webkit-scrollbar-thumb {

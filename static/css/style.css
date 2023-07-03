@@ -8,8 +8,8 @@ body::-webkit-scrollbar {
   }
   
   body::-webkit-scrollbar-thumb {
-    background-color: rgba(30, 41, 59, 0.4);    /* the slider's colour */
-    border-radius: 20px;       /* the slider's roundness */
+    background-color: rgba(30, 41, 59, 0.4);    /* kaydırıcının rengi  */
+    border-radius: 20px;       /* kaydırıcının yuvarlaklığı */
     border: none;
   }
 

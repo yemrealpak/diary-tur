@@ -5,13 +5,13 @@ from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
-# Connecting SQLite
+# SQLite ile bağlantı kurma 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///diary.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-# Creating a DB
+# DB oluşturma
 db = SQLAlchemy(app )
 
-#Assignment #1. Create a DB table
+#Görev #1. DB tablosu oluşturma
 
 
 
@@ -23,32 +23,32 @@ db = SQLAlchemy(app )
 
 
 
-# Running the page with content
+# İçerik sayfasını çalıştırma
 @app.route('/')
 def index():
-    # Displaying the DB objects
-    # Assignment #2. Display the objects from the DB in index.html
+    # DB nesnelerini görüntüleme
+    # Görev #2. DB'deki nesneleri index.html'de görüntüleme
     
 
     return render_template('index.html',
-                           #cards = cards
+                           #kartlar = kartlar
 
                            )
 
-# Running the page with the card
+# Kartla sayfayı çalıştırma
 @app.route('/card/<int:id>')
 def card(id):
-    # Assignment #2. Display the right card by its id
+    # Görev #2. Id'ye göre doğru kartı görüntüleme
     
 
     return render_template('card.html', card=card)
 
-# Running the page and creating the card
+# Sayfayı çalıştırma ve kart oluşturma
 @app.route('/create')
 def create():
     return render_template('create_card.html')
 
-# The card form
+# Kart formu
 @app.route('/form_create', methods=['GET','POST'])
 def form_create():
     if request.method == 'POST':
@@ -56,7 +56,7 @@ def form_create():
         subtitle =  request.form['subtitle']
         text =  request.form['text']
 
-        # Assignment #2. Create a way to store data in the DB
+        # Görev #2. Verileri DB'de depolamak için bir yol oluşturma
         
 
 

@@ -4,12 +4,12 @@ body::-webkit-scrollbar {
   }
   
   body::-webkit-scrollbar-track {
-    background: #0F172A;        /* the colour of the tracker zone */
+    background: #0F172A;        /* izleyici bölgesinin rengi */
   }
   
   body::-webkit-scrollbar-thumb {
-    background-color: rgba(30, 41, 59, 0.4);    /* the colour of the scrollbar */
-    border-radius: 20px;       /* the roundness of the scrollbar */
+    background-color: rgba(30, 41, 59, 0.4);    /* kaydırma çubuğunun rengi */
+    border-radius: 20px;       /* kaydırma çubuğunun yuvarlaklığı */
     border: none;
   }
 

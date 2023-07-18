@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The programmer's diary</title>
+    <title>Programcının günlüğü</title>
     <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
@@ -18,12 +18,12 @@
         {% block content %}
         <form action="{{ url_for('reg') }}" method="post" class="login">
             <label for="email">
-                <input class="form__input" type="email" name="email" id="email" placeholder="Enter your e-mail" required>
+                <input class="form__input" type="email" name="email" id="email" placeholder="E-postanızı giriniz" required>
             </label>
             <label for="password">
-                <input class="form__input" type="password" name="password" id="password" placeholder="Enter your password" required>
+                <input class="form__input" type="password" name="password" id="password" placeholder="Şifrenizi girin" required>
             </label>
-                <button class="form__button">Create account</button>
+                <button class="form__button">Hesap oluşturmak</button>
         </form>
         {% endblock %}
       </main>

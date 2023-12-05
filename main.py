@@ -30,8 +30,68 @@ class Card(db.Model):
 
 #Ödev #2. Kullanıcı tablosunu oluşturun
 
+# Görev №1. Kullanıcı tablosu oluşturun
+class User(db.Model):
+	# Sütunlar oluşturuluyor
+	#id
+	id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+	# Giriş
+	username = db.Column(db.String(100), nullable=False)
+	# Şifre
+	password = db.Column(db.String(30), nullable=False)
+
+
+
+
+
+
+
 # İçerik sayfasını çalıştırma
-@app.route('/')
+@app.route('/', methods=['GET','POST'])
+def login():
+        error = ''
+        if request.method == 'POST':
+            form_login = request.form['email']
+            form_password = request.form['password']
+            
+            #Ödev #4. yetkilendirmeyi uygulamak
+            users_db = User.query.all()
+            for user in users_db:
+                if form_login == user.username and form_password == user.password:
+                    return redirect('/index')
+                else:
+                    error = 'Hatalı giriş veya şifre'
+            return render_template('login.html', error=error)
+
+
+            
+        else:
+            return render_template('login.html')
+
+
+
+@app.route('/reg', methods=['GET','POST'])
+def reg():
+    if request.method == 'POST':
+        username= request.form['email']
+        password = request.form['password']
+        
+        #Ödev #3 Kullanıcı verilerinin veri tabanına kaydedilmesini sağlayın
+        user = User(username=username, password=password)
+        
+        db.session.add(user)
+        db.session.commit()
+        
+
+        
+        return redirect('/')
+    
+    else:    
+        return render_template('registration.html')
+
+
+# İçerik sayfasını çalıştırma
+@app.route('/index')
 def index():
     # Veri tabanı girişlerini görüntüleme
     cards = Card.query.order_by(Card.id).all()
@@ -62,7 +122,7 @@ def form_create():
 
         db.session.add(card)
         db.session.commit()
-        return redirect('/')
+        return redirect('/index')
     else:
         return render_template('create_card.html')
 
